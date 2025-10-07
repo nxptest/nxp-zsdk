@@ -26,9 +26,11 @@ manifest:
     - name: nxp
       url-base: https://github.com/NXP
     - name: nxp-zsdk
-      url-base: https://github.com/nxp-zephyr
+      url-base: https://github.com/nxptest
     - name: zephyrproject
       url-base: https://github.com/zephyrproject-rtos
+    - name: nxp-zephyr
+      url-base: https://github.com/nxp-zephyr
 
   # If not otherwise specified, the projects below should be obtained
   # from the zsdk remote.
@@ -43,7 +45,7 @@ manifest:
 
     - name: zephyr
       repo-path: nxp-zephyr
-      revision: 308979e8be80304c507a4a5142f209935ed88144
+      revision: dwa
       import:
         #
         # ZSDK imports the contents of nxp-zephyr/west.yml at the above
@@ -97,6 +99,8 @@ manifest:
     # added modules
     #
     - name: hal_nxp
+      repo-path: hal_nxp
+      remote: nxp-zephyr
       revision: d83333f197e39dd09f3e310658b1c6ea6dde2334
       path: modules/hal/nxp
       groups:
@@ -144,12 +148,13 @@ manifest:
         - tee
     - name: hostap
       repo-path: hostap
+      remote: nxp-zephyr
       revision: bca4a08d5e91609ead52ee4d8164d6f0540f9282
       path: modules/lib/hostap
     - name: wifi_nxp
-      remote: nxp
+      remote: nxp-zsdk
       repo-path: wifi_nxp
-      revision: 23712d5696919129e5de53ab5235864e607d9740
+      revision: dwa
       path: modules/hal/nxp/mcux/middleware/wifi_nxp
     - name: wifi_nb_fw
       remote: nxp
