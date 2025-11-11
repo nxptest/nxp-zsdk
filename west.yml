@@ -148,8 +148,7 @@ manifest:
         - tee
     - name: hostap
       repo-path: hostap
-      remote: nxp-zephyr
-      revision: bca4a08d5e91609ead52ee4d8164d6f0540f9282
+      revision: dwa
       path: modules/lib/hostap
     - name: wifi_nxp
       remote: nxp-zsdk
